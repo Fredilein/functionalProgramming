@@ -19,4 +19,10 @@ goodEnough y yp
  
 
 main :: IO ()
-main = undefined
+main = do
+  putStrLn "Compute the root of:"
+  inp <- getLine
+  let x = read inp :: Double
+  if (x >= 0) 
+    then putStrLn ("Square root: " ++ (show (root x 1))) >> main
+    else return()
